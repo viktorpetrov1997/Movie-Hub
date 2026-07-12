@@ -1,0 +1,131 @@
+body
+{
+    background:#1b1b1b;
+    color:#f4f4f4;
+}
+
+nav a
+{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+main
+{
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.form-container
+{
+    width:700px;
+    background:#2a2a2a;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+
+h1
+{
+    text-align:center;
+    color:#c0392b;
+    margin-bottom:30px;
+}
+
+.form-group
+{
+    margin-bottom:18px;
+}
+
+label
+{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea,
+select
+{
+    width:100%;
+    padding:12px;
+    background:#1b1b1b;
+    border:1px solid #555;
+    border-radius:6px;
+    color:white;
+    font-size:15px;
+}
+
+input:focus,
+textarea:focus,
+select:focus
+{
+    outline:none;
+    border-color:#c0392b;
+}
+
+textarea
+{
+    height:140px;
+    resize:none;
+}
+
+.buttons
+{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+button
+{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.save
+{
+    background:#c0392b;
+    color:white;
+}
+
+.save:hover
+{
+    background:#e74c3c;
+}
+
+.cancel
+{
+    background:#555;
+    color:white;
+}
+
+.cancel:hover
+{
+    background:#666;
+}
+
+footer
+{
+    margin-top:40px;
+    background:#111;
+    padding:20px;
+    text-align:center;
+    color:#aaa;
+    border-top:2px solid #c0392b;
+}
+
+@media(max-width:700px)
+{
+    .buttons
+    {
+        flex-direction:column;
+    }
+}

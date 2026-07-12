@@ -1,0 +1,186 @@
+body
+{
+    background: #1b1b1b;
+    color: #f4f4f4;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+main
+{
+    padding: 50px 8%;
+}
+
+.movie-section
+{
+    display: grid;
+    grid-template-columns:300px 1fr;
+    gap: 40px;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.poster
+{
+    height: 420px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    border-radius: 8px;
+}
+
+.movie-info h1
+{
+    color: #c0392b;
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+
+.movie-info p
+{
+    margin-bottom: 12px;
+    color: #ddd;
+}
+
+.rating
+{
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.watch-btn
+{
+    margin-top: 20px;
+    display: inline-block;
+    background: #c0392b;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.watch-btn:hover
+{
+    background: #e74c3c;
+}
+
+section
+{
+    margin-top: 50px;
+}
+
+h2
+{
+    color: #c0392b;
+    margin-bottom: 25px;
+}
+
+.description
+{
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 10px;
+    color: #ccc;
+}
+
+.review-card
+{
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.review-card h3
+{
+    color: #e74c3c;
+    margin-bottom: 8px;
+}
+
+.review-rating
+{
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.review-form
+{
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+label
+{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select
+{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #1b1b1b;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+
+textarea
+{
+    resize: none;
+    height: 120px;
+}
+
+button
+{
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover
+{
+    background: #e74c3c;
+}
+
+footer
+{
+    margin-top: 50px;
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    border-top: 2px solid #c0392b;
+}
+
+@media (max-width: 700px)
+{
+    .movie-section
+    {
+        grid-template-columns:1fr;
+    }
+
+    .poster
+    {
+        height: 350px;
+    }
+}
