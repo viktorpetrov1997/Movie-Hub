@@ -110,3 +110,10 @@ footer
     color:#aaa;
     border-top:2px solid #c0392b;
 }
+
+.error-message
+{
+    color:#e74c3c;
+    font-size:14px;
+    margin-top:6px;
+}
