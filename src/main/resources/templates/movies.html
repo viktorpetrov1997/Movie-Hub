@@ -27,9 +27,11 @@
 
     <section class="filters">
 
-        <input type="text" placeholder="Search movies...">
+        <form th:action="@{/movies}" method="get">
+            <input type="text" name="search" placeholder="Search movies..." th:value="${search}">
 
-        <button> Search </button>
+            <button type="submit">Search</button>
+        </form>
 
     </section>
 

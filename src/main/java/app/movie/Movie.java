@@ -13,7 +13,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "movies")
+@Table(
+        name = "movies",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        columnNames = {"title", "director", "releaseYear"}
+                )
+        }
+)
 public class Movie
 {
     @Id

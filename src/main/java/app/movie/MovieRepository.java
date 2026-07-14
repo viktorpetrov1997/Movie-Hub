@@ -10,4 +10,6 @@ import java.util.UUID;
 public interface MovieRepository extends JpaRepository<Movie, UUID>
 {
     List<Movie> findAllByOrderByCreatedAtDesc();
+
+    List<Movie> findByTitleContainingIgnoreCaseOrderByCreatedAtDesc(String title);
 }

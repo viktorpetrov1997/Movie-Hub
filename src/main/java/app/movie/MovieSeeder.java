@@ -50,7 +50,7 @@ public class MovieSeeder implements CommandLineRunner
                     .genre(Genre.SCI_FI)
                     .releaseYear(2026)
                     .duration(132)
-                    .description("A science fiction movie about humanity's first contact.")
+                    .description("A new adventure featuring the Mandalorian and Grogu in the Star Wars galaxy.")
                     .posterUrl("/images/StarWars.jpg")
                     .averageRating(8.0)
                     .createdAt(LocalDateTime.now())
