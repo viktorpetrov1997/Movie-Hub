@@ -1,0 +1,29 @@
+<nav th:fragment="navbar">
+
+  <ul th:if="${loggedInUser == null}">
+    <li><a href="/">Home</a></li>
+    <li><a href="/movies">Movies</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+  </ul>
+
+  <ul th:if="${loggedInUser != null
+                and loggedInUser.role.name() == 'USER'}">
+    <li><a href="/">Home</a></li>
+    <li><a href="/movies">Movies</a></li>
+    <li><a href="/reviews">My Reviews</a></li>
+    <li><a href="/watchlist">Watchlist</a></li>
+    <li><a href="/logout">Logout</a></li>
+
+  </ul>
+
+  <ul th:if="${loggedInUser != null
+                and loggedInUser.role.name() == 'ADMIN'}">
+    <li><a href="/">Home</a></li>
+    <li><a href="/movies">Movies</a></li>
+    <li><a href="/movies/add">Add Movie</a></li>
+    <li><a href="/logout">Logout</a></li>
+
+  </ul>
+
+</nav>
