@@ -52,4 +52,28 @@ public class UserService
 
         return UserMapper.toUserDto(optionalUser.get());
     }
+
+    public UserDto createAdmin(String username, String email, String password)
+    {
+        userRepository.findByUsernameOrEmail(username, email)
+                .ifPresent(user -> {
+                    throw new UserAlreadyExistsException("User with this username or email already exists!");
+                });
+
+        User admin = User.builder()
+                .username(username)
+                .email(email)
+                .password(passwordEncoder.encode(password))
+                .role(UserRole.ADMIN)
+                .build();
+
+        User savedAdmin = userRepository.save(admin);
+
+        return UserMapper.toUserDto(savedAdmin);
+    }
+
+    public boolean existsByRole(UserRole role)
+    {
+        return userRepository.existsByRole(role);
+    }
 }
