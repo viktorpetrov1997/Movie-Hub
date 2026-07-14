@@ -29,91 +29,30 @@
 
         <input type="text" placeholder="Search movies...">
 
-        <select>
-            <option>All Genres</option>
-            <option>Action</option>
-            <option>Comedy</option>
-            <option>Drama</option>
-            <option>Horror</option>
-            <option>Sci-Fi</option>
-        </select>
-
         <button> Search </button>
 
     </section>
 
     <section class="movie-grid">
 
-        <div class="movie-card">
-
+        <div class="movie-card" th:each="movie : ${movies}">
             <div class="poster">
-                <img src="/images/DisclosureDay.jpg" alt="Movie Poster">
+                <img th:src="${movie.posterUrl}" alt="Movie Poster">
             </div>
 
             <div class="movie-info">
+                <h2 th:text="${movie.title}"></h2>
 
-                <h2>Disclosure Day</h2>
+                <p th:text="'Director: ' + ${movie.director}"></p>
 
-                <p> Director: Steven Spielberg </p>
+                <p th:text="'Genre: ' + ${movie.genre.displayName}"></p>
 
-                <p> Genre: Sci-Fi </p>
+                <p th:text="'Year: ' + ${movie.releaseYear}"></p>
 
-                <p> Year: 2026 </p>
-
-                <p class="rating"> ★ 8/10 </p>
-
-                <a href="#" class="details-btn"> View Details </a>
-
-            </div>
-
-        </div>
-
-        <div class="movie-card">
-
-            <div class="poster">
-                <img src="/images/Interstellar.webp" alt="Movie Poster">
-            </div>
-
-            <div class="movie-info">
-
-                <h2>Interstellar</h2>
-
-                <p> Director: Christopher Nolan </p>
-
-                <p> Genre: Adventure </p>
-
-                <p> Year: 2014 </p>
-
-                <p class="rating"> ★ 10/10 </p>
+                <p class="rating" th:text="'★ ' + ${movie.averageRating} + '/10'"></p>
 
                 <a href="#" class="details-btn"> View Details </a>
-
             </div>
-
-        </div>
-
-        <div class="movie-card">
-
-            <div class="poster">
-                <img src="/images/TheDarkKnight.jpg" alt="Movie Poster">
-            </div>
-
-            <div class="movie-info">
-
-                <h2>The Dark Knight</h2>
-
-                <p> Director: Christopher Nolan </p>
-
-                <p> Genre: Action </p>
-
-                <p> Year: 2008 </p>
-
-                <p class="rating"> ★ 9/10 </p>
-
-                <a href="#" class="details-btn"> View Details </a>
-
-            </div>
-
         </div>
 
     </section>
