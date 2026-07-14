@@ -1,8 +1,10 @@
 package app.movie;
 
+import app.movie.exception.MovieNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class MovieService
@@ -27,5 +29,11 @@ public class MovieService
         }
 
         return movieRepository.findByTitleContainingIgnoreCaseOrderByCreatedAtDesc(query);
+    }
+
+    public Movie findById(UUID id)
+    {
+        return movieRepository.findById(id)
+                .orElseThrow(() -> new MovieNotFoundException(id));
     }
 }

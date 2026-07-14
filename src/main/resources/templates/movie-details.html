@@ -24,22 +24,22 @@
     <div class="movie-section">
 
         <div class="poster">
-            <img src="/images/DisclosureDay.jpg" alt="Movie Poster">
+            <img th:src="${movie.posterUrl}" alt="Movie Poster">
         </div>
 
         <div class="movie-info">
 
-            <h1>Disclosure Day</h1>
+            <h1 th:text="${movie.title}"></h1>
 
-            <p> <strong>Director:</strong> Steven Spielberg </p>
+            <p> <strong>Director:</strong> <span th:text="${movie.director}"></span> </p>
 
-            <p> <strong>Genre:</strong> Sci-Fi </p>
+            <p> <strong>Genre:</strong> <span th:text="${movie.genre.displayName}"></span> </p>
 
-            <p> <strong>Release Year:</strong> 2026 </p>
+            <p> <strong>Release Year:</strong> <span th:text="${movie.releaseYear}"></span> </p>
 
-            <p> <strong>Duration:</strong> 135 minutes </p>
+            <p> <strong>Duration:</strong> <span th:text="${movie.duration}"></span> </p>
 
-            <p class="rating"> ★ 8/10 </p>
+            <p class="rating"> ★ <span th:text="${movie.averageRating}"></span>/10 </p>
 
             <a href="#" class="watch-btn"> + Add to Watchlist </a>
 
@@ -51,51 +51,31 @@
 
         <h2>Description</h2>
 
-        <div class="description">
-            A whistleblower attempts to reveal hidden information about extraterrestrial
-            life while powerful forces try to keep the truth secret. Disclosure Day
-            explores humanity's reaction to discovering that we may not be alone.
-        </div>
+        <div class="description" th:text="${movie.description}"></div>
 
     </section>
 
 
     <section>
-
         <h2>Reviews</h2>
 
-        <div class="review-card">
+        <p th:if="${#lists.isEmpty(movie.reviews)}">No reviews yet.</p>
 
-            <h3>John Smith</h3>
+        <div class="review-card" th:each="review : ${movie.reviews}">
 
-            <p class="review-rating"> ★ 9/10 </p>
+            <h3 th:text="${review.reviewer.username}"></h3>
 
-            <p>
-                A gripping sci-fi mystery with impressive visuals and a thought-provoking
-                story about humanity's place in the universe.
-            </p>
+            <p class="review-rating">★ <span th:text="${review.rating}"></span>/10</p>
 
-        </div>
-
-        <div class="review-card">
-
-            <h3>Ashley Brown</h3>
-
-            <p class="review-rating"> ★ 10/10 </p>
-
-            <p> The soundtrack and cinematography are unforgettable. </p>
+            <p th:text="${review.content}"></p>
 
         </div>
-
     </section>
 
-
     <section>
-
         <h2>Write a Review</h2>
 
         <div class="review-form">
-
             <form>
                 <label> Rating </label>
 
@@ -118,9 +98,7 @@
 
                 <button type="submit"> Submit Review </button>
             </form>
-
         </div>
-
     </section>
 
 </main>
